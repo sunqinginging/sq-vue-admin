@@ -1,0 +1,13 @@
+// scss 声明好的内容 在js中也能使用
+$sideBarWidth: 220px;
+$narBarWidth: 50px;
+
+$menuText: #bfcbd9;
+$menuActiveText: #409eff;
+$menuBg: #304156;
+
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  menuBg: $menuBg;
+}

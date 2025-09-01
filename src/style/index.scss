@@ -1,0 +1,6 @@
+@import "./variables.module.scss";
+
+:root {
+  --sidebar-width: #{$sideBarWidth};
+  --narbar-width: #{$narBarWidth};
+}
