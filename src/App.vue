@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useGenerateTheme } from "./hooks/useGenerateTheme";
-import HelloWorld from "./components/HelloWorld.vue";
 useGenerateTheme();
+console.log(import.meta.env.VITE_BASE_URL);
 </script>
 
 <template>
   <!-- <router-view></router-view> -->
   <HelloWorld msg="hhh"></HelloWorld>
+  <div btn>2323</div>
 </template>
 
 <style>

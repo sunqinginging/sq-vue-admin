@@ -32,4 +32,14 @@ export default defineConfig({
     }),
     ElementPlus({}),
   ],
+
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:5678",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 });

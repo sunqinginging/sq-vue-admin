@@ -28,5 +28,8 @@ export const useSettingStore = defineStore(
       storage: sessionStorage,
       pick: ["setting.theme"],
     },
+    debounce: {
+      changeSetting: 300,
+    },
   },
 );

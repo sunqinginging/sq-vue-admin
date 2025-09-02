@@ -17,4 +17,7 @@ export default defineConfig({
       applyVariable: ["--at-apply", "--uno-apply", "--uno"],
     }),
   ],
+  shortcuts: {
+    btn: "flex bg-black text-red",
+  },
 });
