@@ -50,7 +50,7 @@
   }
 
   .app-main {
-    --at-apply: flex-1 relative;
+    --at-apply: flex-1 relative overflow-hidden;
     min-height: calc(100% - 84px);
   }
 }

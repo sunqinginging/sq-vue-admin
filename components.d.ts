@@ -21,5 +21,6 @@ declare module 'vue' {
     Sidebar: typeof import('./src/layout/components/Sidebar/index.vue')['default']
     SidebarItem: typeof import('./src/layout/components/Sidebar/SidebarItem.vue')['default']
     SidebarItemLink: typeof import('./src/layout/components/Sidebar/SidebarItemLink.vue')['default']
+    SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
   }
 }
