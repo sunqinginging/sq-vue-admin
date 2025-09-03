@@ -8,6 +8,7 @@ import { createPinia } from "pinia";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 import router from "@/router/index";
 import { debounce } from "./utils/debounce";
+import "normalize.css";
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);

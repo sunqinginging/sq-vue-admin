@@ -1,15 +1,18 @@
 <template>
   <el-menu
-    router
+    class="sidebar-menu"
+    border-none
     default-active="/"
     :background-color="variables.menuBg"
     :text-color="variables.menuText"
     :active-text-color="variables.menuActiveText"
+    :collapse="false"
   >
     <SidebarItem
       v-for="route in routes"
       :key="route.path"
       :item="route"
+      :base-path="route.path"
     ></SidebarItem>
   </el-menu>
 </template>

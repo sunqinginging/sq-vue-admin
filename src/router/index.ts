@@ -28,17 +28,39 @@ export const asyncRoutes: RouteRecordRaw[] = [
     path: "/guide",
     component: Layout,
     redirect: "/guide/user",
+    meta: {
+      title: "指南",
+    },
     children: [
       {
-        path: "user",
+        path: "/guide/user",
         name: "user",
         component: () => import("@/views/guide/user.vue"),
+        meta: {
+          title: "用户手册",
+        },
+      },
+      {
+        path: "/guide/install",
+        name: "install",
+        component: () => import("@/views/guide/install.vue"),
+        meta: {
+          title: "安装方法",
+        },
+      },
+      {
+        path: "https://router.vuejs.org/zh/guide/advanced/extending-router-link.html#%E6%89%A9%E5%B1%95-RouterLink",
+        name: "",
+        component: () => import("@/views/guide/user.vue"),
+        meta: {
+          title: "外部链接",
+        },
       },
     ],
   },
 ];
 
-export const routes = [...constantRoutes];
+export const routes = [...asyncRoutes];
 
 export default createRouter({
   history: createWebHistory(),
