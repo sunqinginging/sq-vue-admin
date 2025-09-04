@@ -38,8 +38,6 @@ const resolvePath = (childPath: string) => {
   }
   return path.resolve(basePath, childPath);
 };
-
-console.log(path.resolve("/guide", "user"));
 </script>
 
 <style lang="scss" scoped></style>

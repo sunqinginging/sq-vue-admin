@@ -13,7 +13,7 @@ import transformerDirectives from "@unocss/transformer-directives";
 // 引入的这个presetIcons会ts报错
 // import presetIcons from "@unocss/preset-icons";
 export default defineConfig({
-  presets: [presetMini(), presetWind3(), presetAttributify(), presetIcons({})],
+  presets: [presetAttributify(), presetMini(), presetWind3(), presetIcons({})],
   transformers: [
     transformerDirectives({
       applyVariable: ["--at-apply", "--uno-apply", "--uno"],

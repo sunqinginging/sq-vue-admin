@@ -1,5 +1,5 @@
 <template>
-  <IconifyIcon :class="svgClass" :icon="iconName"></IconifyIcon>
+  <IconifyIcon :class="svgClass" :icon="iconName" v-bind="$attrs"></IconifyIcon>
 </template>
 
 <script setup lang="ts">

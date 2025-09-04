@@ -7,7 +7,6 @@ import { testRequest } from "@/apis/test";
 import { useAsync } from "@/hooks/useAsync";
 
 const isDark = useDark();
-console.log(isDark);
 const handleChangeDrk = useToggle(isDark);
 defineProps<{ msg: string }>();
 
@@ -49,7 +48,9 @@ onMounted(() => {
   <div @click="handleChangeDrk()">{{ isDark ? "dark" : "light" }}</div>
   <el-color-picker v-model="theme" />
   <h1 style="background-color: var(--el-color-primary-dark-2)">{{ msg }}</h1>
-  <div class="test-box">哈哈哈 我测试一下unocss怎么玩呢</div>
+  <div class="test-box" bg-black dark:bg-white>
+    哈哈哈 我测试一下unocss怎么玩呢
+  </div>
   <el-button type="info" :loading="loading" @click="run">点击我请求</el-button>
 </template>
 

@@ -39,6 +39,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
         meta: {
           title: "用户手册",
         },
+        children: [
+          {
+            path: "/guide/user/:id",
+            component: () => import("@/views/guide/detail.vue"),
+          },
+        ],
       },
       {
         path: "/guide/install",

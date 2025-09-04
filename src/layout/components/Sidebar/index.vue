@@ -1,11 +1,10 @@
 <template>
   <el-menu
-    class="sidebar-menu"
-    border-none
-    default-active="/"
+    class="sidebar-menu border-none"
+    :default-active="route.path"
     :background-color="variables.menuBg"
     :text-color="variables.menuText"
-    :active-text-color="variables.menuActiveText"
+    :active-text-color="setting.theme"
     :collapse="false"
   >
     <SidebarItem
@@ -20,7 +19,13 @@
 <script setup lang="ts">
 import variables from "@/style/variables.module.scss";
 import { routes } from "@/router";
-console.log(variables);
+import { useSettingStore } from "@/store/setting";
+import { storeToRefs } from "pinia";
+
+const settingStore = useSettingStore();
+const { setting } = storeToRefs(settingStore);
+
+const route = useRoute();
 </script>
 
 <style lang="scss" scoped></style>

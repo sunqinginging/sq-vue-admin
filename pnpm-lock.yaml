@@ -23,12 +23,18 @@ importers:
       element-plus:
         specifier: ^2.10.7
         version: 2.10.7(vue@3.5.18(typescript@5.8.3))
+      install:
+        specifier: ^0.13.0
+        version: 0.13.0
       normalize.css:
         specifier: ^8.0.1
         version: 8.0.1
       path-browserify:
         specifier: ^1.0.1
         version: 1.0.1
+      path-to-regexp:
+        specifier: ^8.3.0
+        version: 8.3.0
       pinia:
         specifier: ^3.0.3
         version: 3.0.3(typescript@5.8.3)(vue@3.5.18(typescript@5.8.3))
@@ -1545,6 +1551,10 @@ packages:
     resolution: {integrity: sha512-QQnnxNyfvmHFIsj7gkPcYymR8Jdw/o7mp5ZFihxn6h8Ci6fh3Dx4E1gPjpQEpIuPo9XVNY/ZUwh4BPMjGyL01g==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
+  install@0.13.0:
+    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
+    engines: {node: '>= 0.10'}
+
   is-arrayish@0.2.1:
     resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
 
@@ -1858,6 +1868,9 @@ packages:
   path-key@3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
     engines: {node: '>=8'}
+
+  path-to-regexp@8.3.0:
+    resolution: {integrity: sha512-7jdwVIRtsP8MYpdXSwOS0YdD0Du+qOoF/AEPIt88PcCFrZCzx41oxku1jD88hZBwbNUIEfpqvuhjFaMAqMTWnA==}
 
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
@@ -3843,6 +3856,8 @@ snapshots:
 
   ini@4.1.1: {}
 
+  install@0.13.0: {}
+
   is-arrayish@0.2.1: {}
 
   is-binary-path@2.1.0:
@@ -4115,6 +4130,8 @@ snapshots:
   path-exists@5.0.0: {}
 
   path-key@3.1.1: {}
+
+  path-to-regexp@8.3.0: {}
 
   pathe@2.0.3: {}
 

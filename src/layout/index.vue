@@ -5,8 +5,12 @@
     </div>
     <div class="main-container">
       <div class="header">
-        <div class="navbar">导航栏1</div>
-        <div class="tags-container">tags-view</div>
+        <div class="navbar">
+          <Breadcrumb></Breadcrumb>
+        </div>
+        <div class="tags-container">
+          <TagsView></TagsView>
+        </div>
       </div>
       <div class="app-main">
         <router-view v-slot="{ Component }">
@@ -21,7 +25,30 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useSystemsStore } from "@/store/sysmtem";
+
+const route = useRoute();
+const systemStore = useSystemsStore();
+const { addTagsView } = systemStore;
+watch(
+  route,
+  (to) => {
+    const { path, fullPath, params, query, meta, name } = to;
+    addTagsView({
+      path,
+      fullPath,
+      params,
+      query,
+      meta,
+      name,
+    });
+  },
+  {
+    immediate: true,
+  },
+);
+</script>
 
 <style lang="scss" scoped>
 .app-wrapper {

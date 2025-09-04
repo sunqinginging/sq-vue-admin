@@ -8,6 +8,9 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Breadcrumb: typeof import('./src/layout/components/Breadcrumb/index.vue')['default']
+    Contextmenu: typeof import('./src/layout/components/TagsView/ContextMenu.vue')['default']
+    ContextMenu: typeof import('./src/layout/components/TagsView/ContextMenu.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElColorPicker: typeof import('element-plus/es')['ElColorPicker']
     ElDialog: typeof import('element-plus/es')['ElDialog']
@@ -22,5 +25,6 @@ declare module 'vue' {
     SidebarItem: typeof import('./src/layout/components/Sidebar/SidebarItem.vue')['default']
     SidebarItemLink: typeof import('./src/layout/components/Sidebar/SidebarItemLink.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
+    TagsView: typeof import('./src/layout/components/TagsView/index.vue')['default']
   }
 }

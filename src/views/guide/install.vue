@@ -1,5 +1,8 @@
 <template>
-  <div>install</div>
+  <div>
+    install
+    <hello-world msg="hhh"></hello-world>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
