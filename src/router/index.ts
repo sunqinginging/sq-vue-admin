@@ -33,7 +33,7 @@ export const asyncRoutes: RouteRecordRaw[] = [
     },
     children: [
       {
-        path: "/guide/user",
+        path: "user",
         name: "user",
         component: () => import("@/views/guide/user.vue"),
         meta: {
@@ -43,6 +43,18 @@ export const asyncRoutes: RouteRecordRaw[] = [
           {
             path: "/guide/user/:id",
             component: () => import("@/views/guide/detail.vue"),
+            meta: {
+              title: "用户详情",
+            },
+            children: [
+              {
+                path: "detail",
+                component: () => import("@/views/guide/test.vue"),
+                meta: {
+                  title: "用户具体详情",
+                },
+              },
+            ],
           },
         ],
       },
@@ -66,7 +78,7 @@ export const asyncRoutes: RouteRecordRaw[] = [
   },
 ];
 
-export const routes = [...asyncRoutes];
+export const routes = [...constantRoutes, ...asyncRoutes];
 
 export default createRouter({
   history: createWebHistory(),

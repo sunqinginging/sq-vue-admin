@@ -8,9 +8,13 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppMain: typeof import('./src/layout/components/AppMain/index.vue')['default']
     Breadcrumb: typeof import('./src/layout/components/Breadcrumb/index.vue')['default']
     Contextmenu: typeof import('./src/layout/components/TagsView/ContextMenu.vue')['default']
     ContextMenu: typeof import('./src/layout/components/TagsView/ContextMenu.vue')['default']
+    DarkMode: typeof import('./src/layout/components/DarkMode/index.vue')['default']
+    ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
+    ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElColorPicker: typeof import('element-plus/es')['ElColorPicker']
     ElDialog: typeof import('element-plus/es')['ElDialog']
@@ -19,8 +23,10 @@ declare module 'vue' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     Hamburger: typeof import('./src/layout/components/Hamburger/index.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    NavBar: typeof import('./src/layout/components/NavBar/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Screenfull: typeof import('./src/layout/components/Screenfull/index.vue')['default']
     Sidebar: typeof import('./src/layout/components/Sidebar/index.vue')['default']
     SidebarItem: typeof import('./src/layout/components/Sidebar/SidebarItem.vue')['default']
     SidebarItemLink: typeof import('./src/layout/components/Sidebar/SidebarItemLink.vue')['default']

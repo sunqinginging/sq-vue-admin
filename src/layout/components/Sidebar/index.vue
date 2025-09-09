@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import variables from "@/style/variables.module.scss";
-import { routes } from "@/router";
+import { asyncRoutes as routes } from "@/router";
 import { useSettingStore } from "@/store/setting";
 import { storeToRefs } from "pinia";
 

@@ -12,7 +12,7 @@
       v-for="child in item.children"
       :key="child.path"
       :item="child"
-      :base-path="child.path"
+      :base-path="resolvePath(item.path)"
     ></sidebar-item>
   </el-sub-menu>
 </template>

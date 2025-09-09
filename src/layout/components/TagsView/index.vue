@@ -12,11 +12,13 @@
     >
       <span class="tags-view__item--current" v-if="isActive(item)"></span>
       <span>{{ item.meta?.title }}</span>
-      <svg-icon
-        icon-name="ant-design:close-outlined"
-        v-if="!isActive(item)"
-        @click.stop="removeTagsView(TagOperateType.SELF, index)"
-      ></svg-icon>
+      <span class="tag-close-icon-container" v-if="!isActive(item)">
+        <svg-icon
+          icon-name="ant-design:close-outlined"
+          custom-class="tag-close-icon"
+          @click.stop="removeTagsView(TagOperateType.SELF, index)"
+        ></svg-icon>
+      </span>
     </div>
   </div>
   <context-menu
@@ -102,16 +104,35 @@ watch(isContextMenuShow, (newValue) => {
 
     &.active {
       background-color: v-bind(themeColor);
+      color: #fff;
     }
   }
 
   .tags-view__item--current {
-    --at-apply: bg-black "dark:bg-white";
+    /* --at-apply: bg-black "dark:bg-white"; */
     display: inline-block;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     margin-right: 4px;
+    background-color: #fff;
   }
+}
+
+.tag-close-icon-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--text-disabled);
+  border-radius: 50%;
+  margin-left: 8px;
+}
+
+.tag-close-icon {
+  width: 1em;
+  height: 1em;
 }
 </style>

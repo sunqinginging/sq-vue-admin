@@ -10,6 +10,46 @@ const isDark = useDark();
 const handleChangeDrk = useToggle(isDark);
 defineProps<{ msg: string }>();
 
+const enableTransitions = () =>
+  "startViewTransition" in document &&
+  window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+
+const handleDarkModeChange = (event: MouseEvent) => {
+  console.log(event);
+  handleTransition(event);
+  // handleChangeDrk();
+};
+
+const handleTransition = async ({ clientX: x, clientY: y }: MouseEvent) => {
+  if (!enableTransitions()) {
+    handleChangeDrk();
+    return;
+  }
+  const clipPath = [
+    `circle(0px at ${x}px ${y}px)`,
+    `circle(${Math.hypot(
+      Math.max(x, innerWidth - x),
+      Math.max(y, innerHeight - y),
+    )}px at ${x}px ${y}px)`,
+  ];
+
+  // 创建动画对象 ready指的是等待伪元素被创建
+  await document.startViewTransition(async () => {
+    // 回调函数
+    handleChangeDrk();
+    await nextTick();
+  }).ready;
+  // 使新视图 动画化
+  document.documentElement.animate(
+    { clipPath: isDark.value ? clipPath.reverse() : clipPath },
+    {
+      duration: 300,
+      easing: "ease-in",
+      pseudoElement: `::view-transition-${isDark.value ? "old" : "new"}(root)`,
+    },
+  );
+};
+
 // const { proxy } = getCurrentInstance();
 
 const settingStore = useSettingStore();
@@ -45,7 +85,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div @click="handleChangeDrk()">{{ isDark ? "dark" : "light" }}</div>
+  <div @click="handleDarkModeChange">{{ isDark ? "dark" : "light" }}</div>
   <el-color-picker v-model="theme" />
   <h1 style="background-color: var(--el-color-primary-dark-2)">{{ msg }}</h1>
   <div class="test-box" bg-black dark:bg-white>
@@ -61,5 +101,20 @@ onMounted(() => {
 
 .read-the-docs {
   color: #888;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root),
+.dark::view-transition-old(root) {
+  z-index: 9999;
 }
 </style>

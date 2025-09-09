@@ -6,49 +6,20 @@
     <div class="main-container">
       <div class="header">
         <div class="navbar">
-          <Breadcrumb></Breadcrumb>
+          <nav-bar></nav-bar>
         </div>
         <div class="tags-container">
           <TagsView></TagsView>
         </div>
       </div>
       <div class="app-main">
-        <router-view v-slot="{ Component }">
-          <transition name="fade">
-            <keep-alive>
-              <component :is="Component"></component>
-            </keep-alive>
-          </transition>
-        </router-view>
+        <app-main></app-main>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-import { useSystemsStore } from "@/store/sysmtem";
-
-const route = useRoute();
-const systemStore = useSystemsStore();
-const { addTagsView } = systemStore;
-watch(
-  route,
-  (to) => {
-    const { path, fullPath, params, query, meta, name } = to;
-    addTagsView({
-      path,
-      fullPath,
-      params,
-      query,
-      meta,
-      name,
-    });
-  },
-  {
-    immediate: true,
-  },
-);
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .app-wrapper {
